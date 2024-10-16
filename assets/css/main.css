@@ -1,0 +1,223 @@
+/* css of view\page\main.php */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f1f1f1;
+}
+
+.sidebar {
+    position: fixed;
+    width: 230px;
+    height: 100vh;
+    background-color: #2b2d3a;
+    color: white;
+    padding: 20px;
+    left: 0;
+    top: 0;
+    transition: left 0.3s ease;
+    z-index: 1000;
+}
+
+.sidebar.hide {
+    left: -250px; /* Hide sidebar when the hide class is active */
+}
+
+.sidebar h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: normal;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar ul li a:hover {
+    color: #4a8eff;
+}
+
+.main-content {
+    margin-left: 230px;
+    padding: 20px;
+    transition: margin-left 0.3s ease;
+}
+
+.main-content.collapsed {
+    margin-left: 0;
+}
+
+.topbar {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.topbar input {
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 300px;
+}
+
+.topbar .icons {
+    display: flex;
+    align-items: center;
+}
+
+.topbar .icons i {
+    font-size: 20px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.notifications {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.notifications ul {
+    list-style: none;
+}
+
+.notifications ul li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.notifications ul li:last-child {
+    border-bottom: none;
+}
+
+.notifications a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.dashboard-cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 32%;
+    padding: 20px;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.blue {
+    background-color: #2f80ed;
+}
+
+.green {
+    background-color: #27ae60;
+}
+
+.orange {
+    background-color: #f2994a;
+}
+
+.card .icon {
+    font-size: 50px;
+    opacity: 0.7;
+}
+
+.card h3 {
+    font-size: 16px;
+}
+
+.card p {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Toggle button styles */
+.menu-toggle {
+    font-size: 30px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+/* Button to hide/show sidebar */
+.toggle-sidebar {
+    cursor: pointer;
+    background-color: #f2994a;
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    .main-content {
+        margin-left: 200px;
+    }
+
+    .main-content.collapsed {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .sidebar {
+        left: -250px;
+    }
+
+    .sidebar.open {
+        left: 0;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .dashboard-cards {
+        flex-direction: column;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .toggle-sidebar {
+        display: block;
+    }
+}
